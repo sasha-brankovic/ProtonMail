@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="TestSuite">
+    <parameter name="userName" value="user"/>
+    <parameter name="password" value="!Test123"/>
+    <parameter name="repeatedPassword" value="!Test123"/>
+
+    <test name="SignUp Test with empty username">
+        <parameter name="userName" value="null"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+    <test name="SignUp Test with empty password">
+        <parameter name="password" value="null"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+    <test name="SignUp Test with empty repeated password">
+        <parameter name="repeatedPassword" value="null"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+    <test name="SignUp Test with different repeated password">
+        <parameter name="repeatedPassword" value="!Test1234"/>
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+    <test name="SignUp Test with correct filled form">
+        <classes>
+            <class name="tests.SignUpTest"/>
+        </classes>
+    </test>
+
+    <test name="LogIn Test with empty username">
+        <parameter name="userName" value="null"/>
+        <classes>
+            <class name="tests.LogInTest"/>
+        </classes>
+    </test>
+    <test name="LogIn Test with empty password">
+        <parameter name="password" value="null"/>
+        <classes>
+            <class name="tests.LogInTest"/>
+        </classes>
+    </test>
+    <test name="LogIn Test with invalid credentials">
+        <parameter name="password" value="!Test000"/>
+        <classes>
+            <class name="tests.LogInTest"/>
+        </classes>
+    </test>
+    <test name="LogIn Test with valid credentials">
+        <classes>
+            <class name="tests.LogInTest"/>
+        </classes>
+    </test>
+    <test name="Sending Email Test">
+        <parameter name="emailOfRecipient" value="ssbrankovic@yahoo.com"/>
+        <parameter name="emailSubject" value="Test Proton Email"/>
+        <parameter name="emailContent" value="Hello from Proton email"/>
+        <classes>
+            <class name="tests.HomePageTest"/>
+        </classes>
+    </test>
+</suite>
